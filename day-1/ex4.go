@@ -32,9 +32,9 @@ func TwoSum() {
 	for i := 0; i < len(numbers); i++ {
 		var minus = target - numbers[i]
 		
-		if (hashMap[minus] != 0) {
+		if idx, num := hashMap[minus]; num {
 			result = append(result, i)
-			result = append(result, hashMap[minus])
+			result = append(result, idx)
 			sort.Ints(result)
 			break
 		}
